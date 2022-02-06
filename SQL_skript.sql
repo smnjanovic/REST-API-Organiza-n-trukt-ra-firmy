@@ -1,6 +1,8 @@
-CREATE DATABASE kolo3;
+CREATE DATABASE kolo2;
+GO
 
-USE kolo3;
+USE kolo2;
+GO
 
 CREATE TABLE employees (
 	id int identity(1,1) not null,
@@ -23,6 +25,7 @@ CREATE TABLE nodes (
 	constraint boss_fk foreign key(node_boss) references employees(id),
 	constraint super_fk foreign key(node_super) references nodes(id)
 );
+GO
 
 insert into employees (title_before_name, title_after_name, first_name, last_name, phone, email)
 select 'Ing.', null, 'Mária', 'Slivková', '+421957164981', 'marry.slivka@azet.sk'
